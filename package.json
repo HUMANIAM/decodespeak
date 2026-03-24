@@ -5,6 +5,14 @@
   "version": "0.0.1",
   "publisher": "ibrahim",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HUMANIAM/decodespeak.git"
+  },
+  "homepage": "https://github.com/HUMANIAM/decodespeak#readme",
+  "bugs": {
+    "url": "https://github.com/HUMANIAM/decodespeak/issues"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
