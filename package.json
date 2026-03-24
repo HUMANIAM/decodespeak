@@ -14,6 +14,7 @@
   "activationEvents": [
     "onStartupFinished",
     "onCommand:decodespeak.explainActiveDiffHunk",
+    "onCommand:decodespeak.openSidebar",
     "onCommand:decodespeak.acceptActiveDiffHunk",
     "onCommand:decodespeak.revertActiveDiffHunk"
   ],
@@ -34,8 +35,31 @@
         "command": "decodespeak.revertActiveDiffHunk",
         "title": "DecodeSpeak: Revert Active Diff Hunk",
         "category": "DecodeSpeak"
+      },
+      {
+        "command": "decodespeak.openSidebar",
+        "title": "DecodeSpeak: Focus Sidebar",
+        "category": "DecodeSpeak"
       }
     ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "decodespeak",
+          "title": "DecodeSpeak",
+          "icon": "media/decodespeak-activity.svg"
+        }
+      ]
+    },
+    "views": {
+      "decodespeak": [
+        {
+          "type": "webview",
+          "id": "decodespeak.sidebarView",
+          "name": "DecodeSpeak"
+        }
+      ]
+    },
     "configuration": {
       "title": "DecodeSpeak",
       "properties": {
