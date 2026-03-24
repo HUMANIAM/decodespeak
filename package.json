@@ -1,0 +1,87 @@
+{
+  "name": "decodespeak",
+  "displayName": "DecodeSpeak",
+  "description": "Explain code diffs in plain English inside VS Code",
+  "version": "0.0.1",
+  "publisher": "ibrahim",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:decodespeak.explainActiveDiffHunk",
+    "onCommand:decodespeak.acceptActiveDiffHunk",
+    "onCommand:decodespeak.revertActiveDiffHunk"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "decodespeak.explainActiveDiffHunk",
+        "title": "DecodeSpeak: Explain Active Diff Hunk",
+        "category": "DecodeSpeak"
+      },
+      {
+        "command": "decodespeak.acceptActiveDiffHunk",
+        "title": "DecodeSpeak: Accept Active Diff Hunk",
+        "category": "DecodeSpeak"
+      },
+      {
+        "command": "decodespeak.revertActiveDiffHunk",
+        "title": "DecodeSpeak: Revert Active Diff Hunk",
+        "category": "DecodeSpeak"
+      }
+    ],
+    "configuration": {
+      "title": "DecodeSpeak",
+      "properties": {
+        "decodespeak.codexCliPath": {
+          "type": "string",
+          "default": "codex",
+          "markdownDescription": "Path to the `codex` CLI executable."
+        },
+        "decodespeak.codexModel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "markdownDescription": "Optional model name passed to `codex exec --model`."
+        },
+        "decodespeak.requestTimeoutMs": {
+          "type": "number",
+          "default": 90000,
+          "minimum": 5000,
+          "markdownDescription": "Timeout for Codex CLI explanation requests."
+        },
+        "decodespeak.contextLines": {
+          "type": "number",
+          "default": 8,
+          "minimum": 0,
+          "maximum": 50,
+          "markdownDescription": "How many modified-side context lines to include around a hunk."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "vitest run",
+    "check": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "diff": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.1",
+    "@types/node": "^22.13.10",
+    "@types/vscode": "^1.96.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.4"
+  }
+}

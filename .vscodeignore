@@ -1,0 +1,15 @@
+ai_assistant/**
+docs/**
+src/**
+.tmp/**
+.vscode-test/**
+coverage/**
+*.md
+!README.md
+tsconfig.json
+vitest.config.ts
+.gitignore
+node_modules/.bin/**
+node_modules/**/test/**
+node_modules/**/*.ts
+node_modules/**/*.map
