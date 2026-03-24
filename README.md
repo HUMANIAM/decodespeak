@@ -5,6 +5,7 @@ DecodeSpeak is a VS Code extension prototype for explaining diff hunks in plain 
 Current MVP:
 - detects the active text diff editor
 - computes per-hunk CodeLens actions
+- exposes a dedicated sidebar view in the Activity Bar
 - calls local `codex exec` for explanations
 - caches explanations per hunk
 - supports `Explain`, `Accept`, and a placeholder `Revert`
@@ -15,6 +16,13 @@ Current MVP:
 ```bash
 npm install
 npm run build
+npm run test
 ```
 
-Open this folder in VS Code and press `F5` to launch the extension host.
+Launch a dedicated Extension Development Host:
+
+```bash
+code --new-window \
+  --extensionDevelopmentPath="$PWD" \
+  "$PWD"
+```

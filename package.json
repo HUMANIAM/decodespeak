@@ -4,7 +4,7 @@
   "description": "Explain code diffs in plain English inside VS Code",
   "version": "0.0.1",
   "publisher": "ibrahim",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.96.0"
   },
